@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAttendeeRequest;
 use App\Models\Acta;
 use App\Services\AttendeeService;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -39,7 +40,7 @@ class AttendeeController extends Controller
         return redirect()->route('actas.shared.show', ['token' => $token])->with('success', 'Registrado exitosamente.');
     }
 
-    public function editShared(Acta $acta)
+    public function editShared(Acta $acta): Response
     {
         // For editing descripcion and compromisos
         return Inertia::render('Actas/SharedEdit', [
@@ -47,7 +48,7 @@ class AttendeeController extends Controller
         ]);
     }
 
-    public function updateShared(Request $request, Acta $acta)
+    public function updateShared(Request $request, Acta $acta): RedirectResponse
     {
         // Update descripcion or compromisos
         $field = $request->input('field');
