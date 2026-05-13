@@ -19,6 +19,10 @@ class CargoSeeder extends Seeder
             'Asistente',
             'Técnico',
             'Profesional',
+            'Secretario',
+            'Subsecretario',
+            'Funcionario',
+            'Contratista',
             'Otro',
         ];
 

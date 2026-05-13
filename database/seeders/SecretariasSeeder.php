@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Secretariat;
+use App\Models\Secretarias;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,20 +13,27 @@ class SecretariasSeeder extends Seeder
      */
     public function run(): void
     {
-        $secretariats = [
-            'Secretaría de Gobierno',
+        $secretarias = [
+            'Secretaría Privada',
+            'Secretaría Administrativa',
             'Secretaría de Hacienda',
+            'Secretaría de Gobierno',
             'Secretaría de Planeación',
             'Secretaría de Infraestructura',
-            'Secretaría de Educación',
             'Secretaría de Salud',
-            'Secretaría de Ambiente',
-            'Secretaría de Desarrollo Social',
-            'Otro',
+            'Secretaría de Educación',
+            'Secretaría de Desarrollo Económico y Competitividad',
+            'Secretaría de Desarrollo Social y Político',
+            'Secretaría de Cultura',
+            'Secretaría de Deportes',
+            'Secretaría Vivienda Social',
+            'Secretaría Jurídica',
+            'Secretaría TIC',
+            'Secretaría Rural',
         ];
 
         foreach ($secretarias as $name) {
-            Secretariat::create(['name' => $name]);
+            Secretarias::create(['name' => $name]);
         }
     }
 }

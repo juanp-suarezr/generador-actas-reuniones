@@ -13,17 +13,46 @@ class ComunaSeeder extends Seeder
      */
     public function run(): void
     {
-        $comunas = [
-            'Comuna 1',
-            'Comuna 2',
-            'Comuna 3',
-            'Comuna 4',
-            'Comuna 5',
-            // Add more as needed
+        $locations = [
+            // Comunas
+            'Comuna Boston',
+            'Comuna Centro',
+            'Comuna Consota',
+            'Comuna Cuba',
+            'Comuna Del Cafe',
+            'Comuna El Jardín',
+            'Comuna El Oso',
+            'Comuna El Poblado',
+            'Comuna El Rocío',
+            'Comuna Ferrocarril',
+            'Comuna Olímpica',
+            'Comuna Oriente',
+            'Comuna Perla Del Otún',
+            'Comuna Rio Otún',
+            'Comuna San Joaquin',
+            'Comuna San Nicolas',
+            'Comuna Universidad',
+            'Comuna Villasantana',
+            'Comuna Villavicencio',
+            // Corregimientos
+            'Corregimiento Altagracia',
+            'Corregimiento Arabia',
+            'Corregimiento Caimalito',
+            'Corregimiento Cerritos',
+            'Corregimiento Combia Alta',
+            'Corregimiento Combia Baja',
+            'Corregimiento La Bella',
+            'Corregimiento La Estrella -- La palmilla',
+            'Corregimiento La Florida',
+            'Corregimiento Morelia',
+            'Corregimiento Puerto Caldas',
+            'Corregimiento Tribunas Córcega',
         ];
 
-        foreach ($comunas as $name) {
+        foreach ($locations as $name) {
             Comuna::create(['name' => $name]);
         }
     }
 }
+
+
