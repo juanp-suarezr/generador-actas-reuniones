@@ -6,7 +6,7 @@ use App\Models\Secretariat;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SecretariatSeeder extends Seeder
+class SecretariasSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -25,7 +25,7 @@ class SecretariatSeeder extends Seeder
             'Otro',
         ];
 
-        foreach ($secretariats as $name) {
+        foreach ($secretarias as $name) {
             Secretariat::create(['name' => $name]);
         }
     }
