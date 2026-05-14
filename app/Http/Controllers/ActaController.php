@@ -6,6 +6,7 @@ use App\Http\Requests\StoreActaRequest;
 use App\Http\Requests\UpdateActaRequest;
 use App\Models\Acta;
 use App\Services\ActaService;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Inertia\Inertia;
 use Inertia\Response;
