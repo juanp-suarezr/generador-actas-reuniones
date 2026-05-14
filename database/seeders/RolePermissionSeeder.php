@@ -24,6 +24,9 @@ class RolePermissionSeeder extends Seeder
             'download actas',
             'manage users',
             'manage roles',
+            'manage secretarias',
+            'manage comunas',
+            'manage cargos',
         ];
 
         foreach ($permissions as $permission) {

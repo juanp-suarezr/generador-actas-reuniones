@@ -21,14 +21,7 @@ class DatabaseSeeder extends Seeder
             CargoSeeder::class,
             EstadoActaSeeder::class,
             RolePermissionSeeder::class,
-        ]);
-
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'cedula' => '123456789',
+            AdminUserSeeder::class,
         ]);
     }
 }
