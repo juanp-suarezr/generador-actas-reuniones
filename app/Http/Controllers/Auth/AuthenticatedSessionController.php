@@ -23,11 +23,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->authenticate();
+        $credentials = $request->only(['cedula', 'password']);
 
-        $request->session()->regenerate();
+        if (Auth::attempt($credentials, $request->boolean('remember'))) {
+            $request->session()->regenerate();
 
-        return redirect()->intended(route('home', absolute: false));
+            return redirect()->intended(route('home', absolute: false));
+        }
+
+        return back()->withErrors([
+            'cedula' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+        ]);
     }
 
     /**
