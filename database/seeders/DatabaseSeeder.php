@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             ComunaSeeder::class,
             CargoSeeder::class,
             EstadoActaSeeder::class,
+            RolePermissionSeeder::class,
         ]);
 
         // User::factory(10)->create();

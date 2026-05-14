@@ -5,8 +5,10 @@ use App\Http\Controllers\AttendeeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return inertia('Home');
+    return view('app');
 })->name('home');
+
+require __DIR__.'/auth.php';
 
 Route::middleware('auth')->group(function () {
     Route::resource('actas', ActaController::class);
