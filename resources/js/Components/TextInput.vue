@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, useAttrs } from 'vue';
 
 const props = defineProps({
     modelValue: String,
@@ -20,9 +20,10 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue']);
+const attrs = useAttrs();
 
 const inputClass = computed(() => [
     'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm',
-    $attrs.class || '',
+    attrs.class || '',
 ]);
 </script>

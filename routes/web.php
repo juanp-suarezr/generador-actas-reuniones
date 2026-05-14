@@ -5,8 +5,8 @@ use App\Http\Controllers\AttendeeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('app');
-})->name('home');
+    return inertia('Home');
+})->middleware('auth')->name('home');
 
 require __DIR__.'/auth.php';
 
