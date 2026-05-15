@@ -12,6 +12,7 @@
 
 <script setup>
 import { Link } from '@inertiajs/vue3'
+import { computed } from 'vue'
 
 const props = defineProps({
     href: String,
@@ -27,8 +28,8 @@ const props = defineProps({
 })
 
 const classes = computed(() => {
-    return active
-        ? 'block pl-3 pr-4 py-2 border-l-4 border-primary text-base font-medium text-primary bg-primary-50 dark:bg-primary-900/50 focus:outline-none focus:text-primary focus:bg-primary-100 dark:focus:bg-primary-900 focus:border-primary transition duration-150 ease-in-out'
-        : 'block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-800 dark:focus:text-gray-200 focus:bg-gray-50 dark:focus:bg-gray-700 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out'
+    return props.active
+        ? 'block pl-4 pr-6 py-3 ml-2 mr-2 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 text-base font-semibold text-blue-700 dark:text-blue-300 border-l-4 border-blue-500 shadow-sm transition-all duration-300'
+        : 'block pl-4 pr-6 py-3 ml-2 mr-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-white/70 dark:hover:bg-gray-700/70 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:bg-white/90 dark:focus:bg-gray-700/90 transition-all duration-300'
 })
 </script>

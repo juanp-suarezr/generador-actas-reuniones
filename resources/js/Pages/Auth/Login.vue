@@ -3,7 +3,6 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
@@ -31,14 +30,15 @@ const submit = () => {
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
         <div>
             <Link href="/">
-                <ApplicationLogo class="w-20 h-20 fill-current text-gray-500" />
+                <ApplicationLogo origen="login" class="w-20 h-20 fill-current text-gray-500" />
             </Link>
         </div>
 
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
             <form @submit.prevent="submit">
                 <div>
-                    <InputLabel for="cedula" value="Cédula" />
+                    
+                    <label for="cedula" class="block font-medium text-sm text-gray-800">Cedula</label>
 
                     <TextInput
                         id="cedula"
@@ -54,7 +54,7 @@ const submit = () => {
                 </div>
 
                 <div class="mt-4">
-                    <InputLabel for="password" value="Password" />
+                    <label for="password" class="block font-medium text-sm text-gray-800">Password</label>
 
                     <TextInput
                         id="password"

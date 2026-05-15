@@ -10,15 +10,16 @@
 
 <script setup>
 import { Link } from '@inertiajs/vue3'
+import { computed } from 'vue';
 
-defineProps({
+const props = defineProps({
     href: String,
     active: Boolean
 })
 
 const classes = computed(() => {
-    return active
-        ? 'inline-flex items-center px-1 pt-1 border-b-2 border-primary text-sm font-medium leading-5 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-primary transition duration-150 ease-in-out'
-        : 'inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 focus:outline-none focus:text-gray-700 dark:focus:text-gray-300 focus:border-gray-300 dark:focus:border-gray-600 transition duration-150 ease-in-out'
+    return props.active
+        ? 'inline-flex items-center px-4 py-2 mx-1 bg-gradient-to-r from-blue-900/20 to-indigo-900/20 text-sm font-semibold leading-5 text-blue-300 border border-blue-800 shadow-sm transition-all duration-300'
+        : 'inline-flex items-center px-4 py-2 mx-1 text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-800/60 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:bg-gray-800/80 transition-all duration-300 hover:shadow-md'
 })
 </script>
