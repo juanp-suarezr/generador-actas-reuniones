@@ -47,7 +47,28 @@ class ActaController extends Controller
      */
     public function store(StoreActaRequest $request): RedirectResponse
     {
-        $acta = $this->actaService->create($request->validated(), auth()->id());
+        // Verificar autenticación
+        if (!auth()->check()) {
+            return redirect()->route('login')->withErrors(['error' => 'Debes iniciar sesión para crear un acta.']);
+        }
+
+        $userId = auth()->id();
+
+        // Verificar que el usuario existe en la base de datos
+        $user = \App\Models\User::find($userId);
+        if (!$user) {
+            \Log::error('Usuario autenticado no encontrado en base de datos', [
+                'user_id' => $userId,
+                'auth_user' => auth()->user(),
+                'session_id' => session()->getId()
+            ]);
+
+            // Forzar logout y redirect a login
+            auth()->logout();
+            return redirect()->route('login')->withErrors(['error' => 'Tu sesión ha expirado. Por favor, inicia sesión nuevamente.']);
+        }
+
+        $acta = $this->actaService->create($request->validated(), $userId);
 
         return redirect()->route('actas.show', $acta)->with('success', 'Acta creada exitosamente.');
     }
